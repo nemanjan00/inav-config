@@ -1,0 +1,238 @@
+
+
+# diff all 
+
+# version
+# INAV/MAMBAF722_2022B 7.1.2 May 31 2024 / 23:31:23 (4e1e59eb)
+# GCC-10.3.1 20210824 (release)
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults noreboot
+
+# resources
+
+# Timer overrides
+
+# Outputs [servo]
+
+# safehome
+
+# Fixed Wing Approach
+
+# features
+feature VBAT
+feature GPS
+feature PWM_OUTPUT_ENABLE
+
+# beeper
+
+# blackbox
+blackbox -NAV_ACC
+blackbox NAV_POS
+blackbox NAV_PID
+blackbox MAG
+blackbox ACC
+blackbox ATTI
+blackbox RC_DATA
+blackbox RC_COMMAND
+blackbox MOTORS
+blackbox -GYRO_RAW
+blackbox -PEAKS_R
+blackbox -PEAKS_P
+blackbox -PEAKS_Y
+
+# Receiver: Channel map
+
+# Ports
+serial 1 1 115200 115200 0 115200
+serial 3 0 115200 115200 0 115200
+serial 4 2 115200 115200 0 115200
+serial 5 33554432 115200 115200 0 115200
+
+# LEDs
+
+# LED color
+
+# LED mode_color
+
+# Modes [aux]
+aux 0 0 0 1700 2100
+aux 1 1 1 1225 1625
+aux 2 11 3 1300 1700
+aux 3 10 2 1700 2100
+aux 4 3 4 1700 2100
+aux 5 13 5 1675 2100
+aux 6 47 12 900 2075
+
+# Adjustments [adjrange]
+
+# Receiver rxrange
+
+# temp_sensor
+
+# Mission Control Waypoints [wp]
+#wp 0 invalid
+
+# OSD [osd_layout]
+osd_layout 0 0 1 1 H
+osd_layout 0 1 1 16 V
+osd_layout 0 7 21 14 V
+osd_layout 0 9 1 8 V
+osd_layout 0 10 2 6 V
+osd_layout 0 14 40 1 V
+osd_layout 0 15 40 2 V
+osd_layout 0 20 27 17 V
+osd_layout 0 21 8 17 V
+osd_layout 0 22 29 2 V
+osd_layout 0 23 23 2 V
+osd_layout 0 28 20 16 V
+osd_layout 0 30 10 13 V
+osd_layout 0 32 1 17 V
+osd_layout 0 34 22 0 V
+osd_layout 0 105 2 4 V
+osd_layout 0 108 1 2 V
+osd_layout 0 109 1 0 V
+osd_layout 0 112 1 1 V
+
+# Programming: logic
+
+# Programming: global variables
+
+# Programming: PID controllers
+
+# OSD: custom elements
+
+# master
+set looptime = 500
+set gyro_main_lpf_hz = 90
+set gyro_main_lpf_type = PT1
+set dynamic_gyro_notch_q = 250
+set dynamic_gyro_notch_min_hz = 60
+set dynamic_gyro_notch_mode = 3D
+set setpoint_kalman_q = 200
+set gyro_zero_x = -32
+set gyro_zero_z = 14
+set ins_gravity_cmss =  973.777
+set acc_hardware = ICM42605
+set acczero_x = -2
+set acczero_y = -3
+set acczero_z = 5
+set accgain_x = 4094
+set accgain_y = 4103
+set accgain_z = 4097
+set rangefinder_hardware = MSP
+set opflow_hardware = MSP
+set align_mag = CW270FLIP
+set mag_hardware = QMC5883
+set magzero_x = -171
+set magzero_y = -197
+set magzero_z = 36
+set maggain_x = 1504
+set maggain_y = 1489
+set maggain_z = 1502
+set align_mag_pitch = 1800
+set align_mag_yaw = 900
+set baro_hardware = SPL06
+set receiver_type = SERIAL
+set serialrx_provider = CRSF
+set blackbox_rate_denom = 2
+set motor_pwm_protocol = MULTISHOT
+set failsafe_procedure = RTH
+set align_board_roll = 2
+set applied_defaults = 5
+set gps_sbas_mode = AUTO
+set gps_ublox_use_galileo = ON
+set gps_ublox_use_beidou = ON
+set gps_ublox_use_glonass = ON
+set airmode_type = THROTTLE_THRESHOLD
+set nav_rth_altitude = 3000
+set osd_video_system = HDZERO
+set name = AOS7
+set pilot_name = NEMANJA
+set vtx_band = 5
+set vtx_power = 3
+
+# mixer_profile
+mixer_profile 1
+
+set model_preview_type = 3
+
+# Mixer: motor mixer
+
+mmix reset
+
+mmix 0  1.000 -1.000  1.000 -1.000
+mmix 1  1.000 -1.000 -1.000  1.000
+mmix 2  1.000  1.000  1.000  1.000
+mmix 3  1.000  1.000 -1.000 -1.000
+
+# Mixer: servo mixer
+
+# mixer_profile
+mixer_profile 2
+
+
+# Mixer: motor mixer
+
+# Mixer: servo mixer
+
+# profile
+profile 1
+
+set mc_p_pitch = 44
+set mc_i_pitch = 85
+set mc_d_pitch = 28
+set mc_i_roll = 75
+set mc_d_roll = 26
+set mc_p_yaw = 40
+set mc_i_yaw = 80
+set dterm_lpf_hz = 80
+set dterm_lpf_type = PT3
+set mc_iterm_relax = RPY
+set d_boost_min =  0.800
+set d_boost_max =  1.200
+set antigravity_gain =  2.000
+set antigravity_accelerator =  5.000
+set smith_predictor_delay =  1.500
+set tpa_rate = 20
+set tpa_breakpoint = 1200
+set rc_expo = 75
+set rc_yaw_expo = 75
+set roll_rate = 50
+set pitch_rate = 50
+set yaw_rate = 50
+set ez_filter_hz = 90
+
+# profile
+profile 2
+
+
+# profile
+profile 3
+
+
+# battery_profile
+battery_profile 1
+
+set throttle_idle =  10.000
+
+# battery_profile
+battery_profile 2
+
+
+# battery_profile
+battery_profile 3
+
+
+# restore original profile selection
+mixer_profile 1
+profile 1
+battery_profile 1
+
+# save configuration
+save
+
+# 
